@@ -17,13 +17,11 @@ import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
-import com.crashlytics.android.answers.LoginEvent
 import com.pitchedapps.frost.dbflow.CookieModel
 import com.pitchedapps.frost.dbflow.fetchUsername
 import com.pitchedapps.frost.dbflow.loadFbCookiesAsync
 import com.pitchedapps.frost.facebook.PROFILE_PICTURE_URL
 import com.pitchedapps.frost.utils.L
-import com.pitchedapps.frost.utils.frostAnswers
 import com.pitchedapps.frost.utils.launchNewTask
 import com.pitchedapps.frost.utils.setFrostColors
 import com.pitchedapps.frost.web.LoginWebView
@@ -89,9 +87,9 @@ class LoginActivity : BaseActivity() {
             if (!foundImage) L.e("Could not get profile photo; Invalid userId?\n\t$cookie")
             textview.text = String.format(getString(R.string.welcome), name)
             textview.fadeIn()
-            frostAnswers {
-                logLogin(LoginEvent().putMethod("frost_browser").putSuccess(true))
-            }
+//            frostAnswers {
+//                logLogin(LoginEvent().putMethod("frost_browser").putSuccess(true))
+//            }
             /*
              * The user may have logged into an account that is already in the database
              * We will let the db handle duplicates and load it now after the new account has been saved

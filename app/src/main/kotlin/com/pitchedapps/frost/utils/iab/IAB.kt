@@ -4,10 +4,11 @@ import android.app.Activity
 import android.content.Context
 import ca.allanwang.kau.utils.isFromGooglePlay
 import ca.allanwang.kau.utils.startPlayStoreLink
-import com.crashlytics.android.answers.PurchaseEvent
 import com.pitchedapps.frost.BuildConfig
 import com.pitchedapps.frost.R
-import com.pitchedapps.frost.utils.*
+import com.pitchedapps.frost.utils.L
+import com.pitchedapps.frost.utils.Prefs
+import com.pitchedapps.frost.utils.materialDialogThemed
 import org.jetbrains.anko.doAsync
 
 /**
@@ -56,9 +57,9 @@ fun Activity.openPlayProPurchase(code: Int) = openPlayPurchase(FROST_PRO, code)
 
 fun Activity.openPlayPurchase(key: String, code: Int) {
     if (!checkFromPlay()) return
-    frostAnswersCustom("PLAY_PURCHASE") {
-        putCustomAttribute("Key", key)
-    }
+//    frostAnswersCustom("PLAY_PURCHASE") {
+//        putCustomAttribute("Key", key)
+//    }
     IAB.helper?.flagEndAsync()
     IAB.helper?.queryInventoryAsync {
         _, inv ->
@@ -74,11 +75,11 @@ fun Activity.openPlayPurchase(key: String, code: Int) {
                         content(R.string.play_purchased_pro)
                         positiveText(R.string.kau_ok)
                     } else playStoreErrorDialog()
-                    frostAnswers {
-                        logPurchase(PurchaseEvent()
-                                .putItemId(key)
-                                .putSuccess(result.isSuccess))
-                    }
+//                    frostAnswers {
+//                        logPurchase(PurchaseEvent()
+//                                .putItemId(key)
+//                                .putSuccess(result.isSuccess))
+//                    }
                 }
             }
         }

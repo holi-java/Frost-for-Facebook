@@ -19,7 +19,6 @@ import com.pitchedapps.frost.facebook.FB_URL_BASE
 import com.pitchedapps.frost.facebook.FbTab
 import com.pitchedapps.frost.utils.L
 import com.pitchedapps.frost.utils.Prefs
-import com.pitchedapps.frost.utils.frostAnswersCustom
 import com.pitchedapps.frost.utils.frostNotification
 import org.jetbrains.anko.doAsync
 import org.jsoup.Jsoup
@@ -61,7 +60,7 @@ class NotificationService : JobService() {
                     }
                 }
                 if (notifCount > 0) saveNotificationTime(NotificationModel(data.id, latestEpoch))
-                frostAnswersCustom("Notifications") { putCustomAttribute("Count", notifCount) }
+//                frostAnswersCustom("Notifications") { putCustomAttribute("Count", notifCount) }
                 summaryNotification(data.id, notifCount)
             }
             L.d("Finished notifications")

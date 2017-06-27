@@ -278,11 +278,11 @@ class MainActivity : BaseActivity(), FrostWebViewSearch.SearchContract {
         selectedColor = 0x00000001.toLong()
         identifier = item.titleId.toLong()
         onClick { _ ->
-            frostAnswers {
-                logContentView(ContentViewEvent()
-                        .putContentName(item.name)
-                        .putContentType("drawer_item"))
-            }
+//            frostAnswers {
+//                logContentView(ContentViewEvent()
+//                        .putContentName(item.name)
+//                        .putContentType("drawer_item"))
+//            }
             launchWebOverlay(item.url)
             false
         }

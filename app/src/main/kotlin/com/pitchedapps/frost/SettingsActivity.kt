@@ -93,7 +93,7 @@ class SettingsActivity : KPrefActivity() {
                             setFrostTheme(true)
                             themeExterior()
                             invalidateOptionsMenu()
-                            frostAnswersCustom("Theme") { putCustomAttribute("Count", text.toString()) }
+//                            frostAnswersCustom("Theme") { putCustomAttribute("Count", text.toString()) }
                         }
                         true
                     })

@@ -17,8 +17,6 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import ca.allanwang.kau.utils.*
 import com.afollestad.materialdialogs.MaterialDialog
-import com.crashlytics.android.answers.Answers
-import com.crashlytics.android.answers.CustomEvent
 import com.pitchedapps.frost.*
 import com.pitchedapps.frost.dbflow.CookieModel
 import com.pitchedapps.frost.facebook.FB_URL_BASE
@@ -139,17 +137,17 @@ fun Context.scheduleNotifications(minutes: Long): Boolean {
     return true
 }
 
-fun frostAnswers(action: Answers.() -> Unit) {
+//fun frostAnswers(action: Answers.() -> Unit) {
 //    if (BuildConfig.DEBUG) return
 //    //TODO add opt out toggle
 //    Answers.getInstance().action()
-}
+//}
 
-fun frostAnswersCustom(name: String, action: CustomEvent.() -> Unit = {}) {
+//fun frostAnswersCustom(name: String, action: CustomEvent.() -> Unit = {}) {
 //    frostAnswers {
 //        logCustom(CustomEvent("Frost $name").apply { action() })
 //    }
-}
+//}
 
 fun View.frostSnackbar(@StringRes text: Int, builder: Snackbar.() -> Unit = {}) {
     Snackbar.make(this, text, Snackbar.LENGTH_LONG).apply {
