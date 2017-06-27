@@ -130,9 +130,9 @@ dependencies {
 
     compile "com.jude:swipebackhelper:${SWIPE_BACK}"
 
-    compile("com.crashlytics.sdk.android:crashlytics:${CRASHLYTICS}@aar") {
-        transitive = true;
-    }
+//    compile("com.crashlytics.sdk.android:crashlytics:${CRASHLYTICS}@aar") {
+//        transitive = true;
+//    }
 }
 
 kapt {

@@ -140,15 +140,15 @@ fun Context.scheduleNotifications(minutes: Long): Boolean {
 }
 
 fun frostAnswers(action: Answers.() -> Unit) {
-    if (BuildConfig.DEBUG) return
-    //TODO add opt out toggle
-    Answers.getInstance().action()
+//    if (BuildConfig.DEBUG) return
+//    //TODO add opt out toggle
+//    Answers.getInstance().action()
 }
 
 fun frostAnswersCustom(name: String, action: CustomEvent.() -> Unit = {}) {
-    frostAnswers {
-        logCustom(CustomEvent("Frost $name").apply { action() })
-    }
+//    frostAnswers {
+//        logCustom(CustomEvent("Frost $name").apply { action() })
+//    }
 }
 
 fun View.frostSnackbar(@StringRes text: Int, builder: Snackbar.() -> Unit = {}) {

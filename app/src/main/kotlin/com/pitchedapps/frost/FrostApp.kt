@@ -6,17 +6,14 @@ import android.net.Uri
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.crashlytics.android.Crashlytics
-import com.crashlytics.android.answers.Answers
 import com.mikepenz.materialdrawer.util.AbstractDrawerImageLoader
 import com.mikepenz.materialdrawer.util.DrawerImageLoader
 import com.pitchedapps.frost.facebook.FbCookie
 import com.pitchedapps.frost.utils.CrashReportingTree
-import com.pitchedapps.frost.utils.iab.IAB
 import com.pitchedapps.frost.utils.Prefs
+import com.pitchedapps.frost.utils.iab.IAB
 import com.raizlabs.android.dbflow.config.FlowConfig
 import com.raizlabs.android.dbflow.config.FlowManager
-import io.fabric.sdk.android.Fabric
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 import java.util.*
@@ -46,8 +43,8 @@ class FrostApp : Application() {
             Timber.plant(DebugTree())
 //            LeakCanary.enableDisplayLeakActivity(this)
         } else {
-            Fabric.with(this, Crashlytics(), Answers())
-            Crashlytics.setUserIdentifier(Prefs.frostId)
+//            Fabric.with(this, Crashlytics(), Answers())
+//            Crashlytics.setUserIdentifier(Prefs.frostId)
             Timber.plant(CrashReportingTree())
         }
 
